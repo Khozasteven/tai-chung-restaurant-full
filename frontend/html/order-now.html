@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tai Chung Restaurant - Authentic Chinese Cuisine in Cape Town | Book Now!</title>
+    <meta name="description" content="Experience authentic Chinese flavors in Cape Town. Explore our menu, book a table, or order online now!">
+    
+    <!-- Open Graph Tags for Facebook, LinkedIn, and other platforms -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tai Chung Restaurant - Authentic Chinese Cuisine in Cape Town">
+    <meta property="og:description" content="Experience authentic Chinese flavors in Cape Town. Explore our menu, book a table, or order online now!">
+    <meta property="og:image" content="https://www.taichung.africa/frontend/img/1.png">
+    <meta property="og:image:alt" content="Tai Chung Restaurant Signature Dishes">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://www.taichung.africa">
+    <meta property="og:site_name" content="Tai Chung Restaurant">
+    <meta property="og:locale" content="en_ZA">
+    <meta property="og:price:currency" content="ZAR">
+    <meta property="og:email" content="tai213690@gmail.com">
+    <meta property="og:phone_number" content="+27216964870">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tai Chung Restaurant - Authentic Chinese in Cape Town">
+    <meta name="twitter:description" content="Craving authentic Chinese food in Cape Town? Visit Tai Chung Restaurant for a delightful dining experience.">
+    <meta name="twitter:image" content="https://www.taichung.africa/frontend/img/1.png">
+    <meta name="twitter:image:alt" content="Tai Chung Restaurant Signature Dishes">
+    
+    <!-- Geo Tags -->
+    <meta name="geo.position" content="-33.9249;18.4241">
+    <meta name="geo.placename" content="Cape Town">
+    <meta name="geo.region" content="ZA-WC">
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Tai Chung Restaurant",
+        "image": "https://www.taichung.africa/frontend/img/1.png",
+        "telephone": "+27216964870",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "13 belgravia road",
+            "addressLocality": "Cape Town",
+            "addressRegion": "Western Cape",
+            "postalCode": "7764",
+            "addressCountry": "ZA"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "-33.9249",
+            "longitude": "18.4241"
+        },
+        "url": "https://www.taichung.africa",
+        "servesCuisine": "Chinese",
+        "hasMenu": "https://www.taichung.africa/frontend/html/order",
+        "openingHoursSpecification": [
+  {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "opens": "10:00",
+    "closes": "22:00"
+  },
+  {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Sunday"
+    ],
+    "opens": "10:00",
+    "closes": "22:00" // or specify closed if the restaurant is closed on Sundays
+  }
+]
+    </script>
+
+
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/orders.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    
+
+</head>
+<body>
+  
+    <header>
+        <nav class="navbar">
+            <div class="navbar-content">
+                <a href="../html/index.html" class="logo-link">
+                    <img src="../img/1.png" alt="Tai Chung Logo" class="logo">
+                </a>
+                <ul class="nav-list">
+                    <li><a href="../html/index.html" class="nav-link">Home</a></li>
+                    <li><a href="../html/our menu.html" class="nav-link">Menu</a></li>
+                    <li><a href="../html/order-now.html" class="nav-link">Order Now</a></li>
+                    <li><a href="../html/about.html" class="nav-link">About</a></li>
+                    <li><a href="../html/contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="../html/login.html" class="nav-link">Login</a></li>
+                    <li><a href="../html/cart.html" class="nav-link cart-link">
+                        <i class="fas fa-shopping-cart"></i> Cart <span class="cart-count">0</span>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="navbar-actions">
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="social-bar">
+                    <a href="https://www.facebook.com/your_facebook_page" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/your_linkedin_profile" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/your_instagram_profile" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/your_twitter_profile" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.tiktok.com/@your_tiktok_profile" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/your_youtube_channel" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.pinterest.com/your_pinterest_profile" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('.nav-list');
+
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
+
+
+    <div class="welcome-container">
+        <div class="welcome-slider">
+            <img class="welcome-slide active" src="../img/153A4800.png" alt="Cho Mein">
+            <img class="welcome-slide" src="../img/153A4840.png" alt="Sweet 'n' Sour Chicken">
+            <div class="welcome-overlay">
+                <h1>Welcome to Tai Chung Restaurant</h1>
+                <p>Experience the taste of authentic Chinese cuisine.<span class="chinese-phrase"><br>品尝正宗中华美食 </span></p>
+            </div>
+        </div>
+    </div>
+    
+    <main>
+    <div class="menu-container">
+      <h1>Order Now</h1>
+      <div class="menu-categories">
+        <ul class="category-tabs">
+          <li class="category-tab active" data-category="all">All</li>
+          <li class="category-tab" data-category="chow-mein">Chow Mein</li>
+          <li class="category-tab" data-category="chow-faan">Chow Faan</li>
+          <li class="category-tab" data-category="chop-suey">Chop Suey</li>
+          <li class="category-tab" data-category="sweet-and-sour">Sweet & Sour</li>
+          <li class="category-tab" data-category="spring-rolls">Spring Rolls</li>
+          <li class="category-tab" data-category="stir-fry">Stir Fry</li>
+          <li class="category-tab" data-category="beverages">Beverages</li>
+          <li class="category-tab" data-category="snacks">Snacks</li>
+          </ul>
+      </div>
+      <div class="menu-items">
+        </div>
+    </div>
+  
+    <div id="sizeModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Choose Size</h2>
+        <div class="size-options">
+          <button class="size-button" data-size="small">Small</button>
+          <button class="size-button" data-size="medium">Medium</button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="cart">
+      <h2>Your Cart</h2>
+      <div id="cart-items">
+        </div>
+      <p id="cart-total">Total: R0.00</p>
+      <button id="checkout-button">Checkout</button>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section quick-links">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="our menu.html">Menu</a></li>
+          <li><a href="order now.html">Order Now</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-section contact">
+        <h2>Contact Us</h2>
+        <p>13 Belgravia Road, Athlone</p>
+        <p>Phone: <a href="tel:+27216964870">+27 (021) 696 4870</a></p>
+        <p>Email: <a href="mailto:tai213690@gmail.com">tai213690@gmail.com</a></p>
+        <p><a href="https://www.google.com/maps/place/Tai+Chung/@-33.9643158,18.5146237,17z/data=!3m1!4b1!4m6!3m5!1s0x1dcc491b171c29d9:0x889004e9a74cd191!8m2!3d-33.9643158!4d18.5172071!16s%2Fg%2F11q_9t_86h?entry=ttu" target="_blank">View on Google Maps</a></p>
+      </div>
+  
+      <div class="footer-section login">
+        <h2>Login</h2>
+        <form id="login-form">
+          <input type="text" id="username" placeholder="Username" required>
+          <input type="password" id="password" placeholder="Password" required>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+  
+      <div class="footer-section newsletter">
+        <h2>Stay Updated</h2>
+        <p>Sign up for our newsletter to receive exclusive offers, new menu items, and more!</p>
+        <form id="newsletter-form">
+          <input type="email" id="newsletter-email" placeholder="Enter your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <div id="newsletter-message"></div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <div class="social-icons">
+        <a href="https://www.facebook.com/share/1BCB6amT6M/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/public-profile/settings" class="social-icon"><i class="fab fa-linkedin "></i></a>
+        <a href="https://www.instagram.com/tai213690?igsh=YzljYTk1ODg3Zg==" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/ChungTai35858?t=M5K80HKeUmZJHeRZDU9NWQ&s=09" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.tiktok.com/@tai.chung64?_t=ZM-8stRWGtqriw&_r=1" class="social-icon"><i class="fab fa-tiktok"></i></a>
+        <a href="https://youtube.com/@taichung-i7c?si=V9AW1zLIyGMmSZA6" class="social-icon"><i class="fab fa-youtube"></i></a>
+        <a href="https://pin.it/5OmZNAm2I" class="social-icon"><i class="fab fa-pinterest"></i></a>
+      </div>
+      <p>© 2024 Tai Chung Restaurant. All rights reserved.</p>
+      <p>Developed by <a href="https://github.com/Khozasteven" target="_blank">SecureWave IT Consultants</a></p>
+    </div>
+  </footer>
+
+<div class="sticky-chatbot">
+    <div class="chatbot-icon">
+        <i class="fas fa-comment"></i>
+    </div>
+    <div class="chatbot-popup">
+        </div>
+</div>
+
+
+<div class="sticky-cart">
+    <a href="cart.html" class="cart-link">
+        <i class="fas fa-shopping-cart"></i> 
+        <span class="cart-count">0</span>
+    </a>
+</div>
+
+<script src="../js/orders.js" defer></script> 
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tai Chung Restaurant - Authentic Chinese Cuisine in Cape Town | Book Now!</title>
+    <meta name="description" content="Experience authentic Chinese flavors in Cape Town. Explore our menu, book a table, or order online now!">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <link rel="stylesheet" href="../css/landing.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <div class="logo">
+                <img src="../img/1.png" alt="Tai Chung Restaurant Logo">
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Trends</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="welcome-container">
+            <div class="welcome-slider">
+                <img class="welcome-slide active" src="../img/153A4800.png" alt="Cho Mein">
+                <img class="welcome-slide" src="../img/werenga.png" alt="Sweet 'n' Sour Chicken">
+                <div class="welcome-overlay">
+                    <h1>Welcome to Tai Chung Restaurant</h1>
+                    <p>Experience the taste of authentic Chinese cuisine.<span class="chinese-phrase"><br>品尝正宗中华美食 </span></p>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="cta-button main-cta">Sign Up for Launch Day Deals!</a>
+
+        <section id="hero-section" class="hero-section">
+            <div class="container">
+                <h1>Athlone's Favorite Halal Chinese Takeaway</h1>
+                <p>Delicious and authentic Chinese cuisine, now available for online ordering!</p>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <a href="tel:+27216964870" class="call-to-order">
+                <button class="cta-button call-button">
+                    <i class="fas fa-phone"></i> Call to Order: +27 21 696 4870
+                </button>
+            </a>
+        </section>
+
+        <section id="features-section" class="features-section">
+            <div class="container">
+                <div class="feature">
+                    <img src="../img/online-order.png" alt="Convenient Online Ordering">
+                    <h3>Convenient Online Ordering</h3>
+                    <p>Order from the comfort of your home or office and skip the queue.</p>
+                </div>
+                <div class="feature">
+                    <img src="../img/catering.png" alt="Catering and Large Orders">
+                    <h3>Catering and Large Orders</h3>
+                    <p>Perfect for office lunches, parties, and events. Contact us for a custom quote.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="container content-sidebar-container">
+            <div class="main-content">
+                <section class="trends-teaser">
+                    <div class="container">
+                        <h2>Explore Our Food Trends</h2>
+                        <p>Stay up-to-date with the latest culinary inspirations and food trends we're excited about.</p>
+                        <a href="/trends.html" class="cta-button trends-button">See What's Trending</a>
+                    </div>
+                </section>
+
+                <section id="menu-section-main" class="menu-section">
+                    <div class="container">
+                        <h2>Our Menu</h2>
+                        <div class="menu-item">
+                            <img src="../img/153A4800.png" alt="Chow Mein">
+                            <div>
+                                <h3>Chow Mein</h3>
+                                <p>A classic stir-fried noodle dish with your choice of protein and vegetables.</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="../img/hhhh.png" alt="Spring Rolls">
+                            <div>
+                                <h3>Spring Rolls</h3>
+                                <p>Crispy and flavorful spring rolls filled with a savory vegetable and meat mixture.</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="../img/153A4840.png" alt="Chop Suey">
+                            <div>
+                                <h3>Chop Suey</h3>
+                                <p>A colorful and satisfying dish with a variety of vegetables and your choice of protein in a savory sauce.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="sidebar">
+                <div class="popular-dishes">
+                    <h3>Popular Dishes</h3>
+                    <ul>
+                        <li><a href="#">Chow Mein</a></li>
+                        <li><a href="#">Spring Rolls</a></li>
+                        <li><a href="#">Sweet & Sour Chicken</a></li>
+                    </ul>
+                </div>
+
+                <div class="special-offers">
+                    <h3>Special Offers</h3>
+                    <p>10% off all online orders this week!</p>
+                </div>
+
+                <section class="trends-teaser sidebar-trends-teaser">
+                    <div class="container">
+                        <h2>Explore Our Food Trends</h2>
+                        <p>Stay up-to-date with the latest culinary inspirations and food trends we're excited about.</p>
+                        <a href="/trends.html" class="cta-button sidebar-trends-button">See What's Trending</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <section id="about-section" class="about-section">
+            <div class="container">
+                <img src="../img/panjaa-fotor-2025011593531.png" alt="Tai Chung Restaurant">
+                <div>
+                    <h2>About Tai Chung Restaurant</h2>
+                    <p>We are a family-owned and operated restaurant serving authentic halal Chinese cuisine in the heart of Athlone. Our passion is to provide delicious and convenient food that everyone can enjoy.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog-section" class="blog-section">
+            <div class="container">
+                <h2>Latest Blog Posts</h2>
+                <div class="blog-grid">
+                    <div class="blog-post">
+                        <img src="blog-image-1.jpg" alt="Blog Post 1">
+                        <h3>Blog Post Title 1</h3>
+                        <p>Short excerpt of blog post 1. <a href="blog-post-1.html">Read More</a></p>
+                    </div>
+                    <div class="blog-post">
+                        <img src="blog-image-2.jpg" alt="Blog Post 2">
+                        <h3>Blog Post Title 2</h3>
+                        <p>Short excerpt of blog post 2. <a href="blog-post-2.html">Read More</a></p>
+                    </div>
+                    <div class="blog-post">
+                        <img src="blog-image-3.jpg" alt="Blog Post 3">
+                        <h3>Blog Post Title 3</h3>
+                        <p>Short excerpt of blog post 3. <a href="blog-post-3.html">Read More</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials-section" class="testimonials-section">
+            <div class="container">
+                <h2>What Our Customers Say</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial">
+                        <p>"The best Chinese takeaway in Athlone! The food is always fresh and delicious, and the service is fantastic."</p>
+                        <p class="testimonial-author">- Sarah J.</p>
+                    </div>
+                    <div class="testimonial">
+                        <p>"We order from Tai Chung regularly for office lunches, and everyone always loves it. Great variety and excellent quality."</p>
+                        <p class="testimonial-author">-  Mark L.</p>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Authentic Chinese flavors and halal ingredients – perfect for our family! Highly recommend the Chow Mein and Spring Rolls."</p>
+                        <p class="testimonial-author">- Fatima K.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="map-section" class="map-container">
+            <h2>Find Us</h2>
+            <div id="map"></div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p>13 Belgravia Road, Athlone</p>
+                <p>Phone: <a href="tel:+27216964870">+27 (021) 696 4870</a></p>
+                <p>Email: <a href="mailto:tai213690@gmail.com">tai213690@gmail.com</a></p>
+                <p><a href="https://www.google.com/maps/place/Tai+Chung/@-33.9643158,18.5146237,17z/data=!3m1!4b1!4m6!3m5!1s0x1dcc491b171c29d9:0x889004e9a74cd191!8m2!3d-33.9643158!4d18.5172071!16s%2Fg%2F11q_9t_86h?entry=ttu" target="_blank" rel="noopener noreferrer">View on Google Maps</a></p>
+            </div>
+            
+            
+            <div class="footer-section hours">  <h2>Business Hours</h2>
+                <ul class="business-hours-list">
+                    <li>Monday: 11:00 AM - 10:00 PM</li>
+                    <li>Tuesday: 11:00 AM - 10:00 PM</li>
+                    <li>Wednesday: 11:00 AM - 10:00 PM</li>
+                    <li>Thursday: 11:00 AM - 10:00 PM</li>
+                    <li>Friday: 11:00 AM - 11:00 PM</li>
+                    <li>Saturday: 12:00 PM - 11:00 PM</li>
+                    <li>Sunday: 12:00 PM - 10:00 PM</li>
+                    <li>Public Holidays: 12:00 PM - 9:00 PM</li> </ul>
+            </div>
+            
+            <div class="footer-section newsletter">
+                <h2>Stay Updated</h2>
+                <p>Sign up for our newsletter!</p>
+                <form id="newsletter-form" method="post">
+                    <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                    <p class="form-message" id="newsletter-message"></p>
+                </form>
+            </div>
+            <div class="footer-section social">
+                <h2>Follow Us</h2>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/1BCB6amT6M/" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/public-profile/settings" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/tai213690?igsh=YzljYTk1ODg3Zg==" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/ChungTai35858?t=M5K80HKeUmZJHeRZDU9NWQ&s=09" class="social-icon" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.tiktok.com/@tai.chung64?_t=ZM-8stRWGtqriw&_r=1" class="social-icon" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://youtube.com/@taichung-i7c?si=V9AW1zLIyGMmSZA6" class="social-icon" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    <a href="https://pin.it/5OmZNAm2I" class="social-icon" aria-label="Pinterest" target="_blank" rel="noopener noreferrer"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+
+        <div class="footer-section quick-links">  <h2>Quick Links</h2>
+            <ul>
+                <li><a href="/menu.html">Menu</a></li>
+                <li><a href="/trends.html">Food Trends</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="#contact-section">Contact Us</a></li>  <li><a href="/login.html">Login</a></li> </ul>
+        </div>
+
+
+            <div class="footer-section developers">
+                <h2>Developed By</h2>
+                <ul>
+                    <li><a href="https://github.com/Khozasteven" target="_blank" rel="noopener noreferrer">SecureWave IT Consultants</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2024 Tai Chung Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="chatbot">
+                <div id="chatbot-header">
+                    <h2>Tai Chung Chatbot</h2>
+                </div>
+                <div id="chatbot-output">
+                    <div class="chatbot-message bot-message">
+                        <p>Hi there! Welcome to Tai Chung Restaurant. How can I help you today?</p>
+                    </div>
+                </div>
+                <div class="chatbot-input-area">
+                    <input type="text" id="chatbot-input" placeholder="Ask me a question...">
+                    <button id="chatbot-send-button"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+            <div id="chatbot-icon">  <i class="fas fa-comment-dots"></i>
+            </div>
+            <div id="chatbot-popup-message">
+                Hi, I'm your Tai Chung expert! Ask me anything about our restaurant.
+            </div>
+
+    <script src="../js/landing.js"></script>
+</body>
+</html>

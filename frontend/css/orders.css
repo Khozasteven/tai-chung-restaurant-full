@@ -1,0 +1,793 @@
+
+/* Basic Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Header and Navigation */
+header {
+  background-color: gold;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px;
+  max-width: 1500px;
+  margin: 0 auto;
+}.navbar-content {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}.logo {
+  max-height: 180px;
+  margin-right: 20px;
+}.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  bottom: 20px;
+  display: flex;
+  transition: transform 0.3s ease-in-out; /* Smooth transition for mobile menu */
+}.nav-link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 800;
+  margin: 8px;
+  padding: 8px;
+  border-radius: 5px;
+  transition: background-color 0.8s, color 0.8s;
+
+}.nav-link:hover {
+  background-color: #000000;
+  color: #fff;
+  font-weight: 500; 
+  font-family: 'Roboto', sans-serif; /* Change font family to Roboto on hover */
+
+
+}.cart-link::before {
+  content: '';
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.8s ease;
+  z-index: -1; /* Place behind the icon */
+
+}.cart-link:hover::before {
+  opacity: 0.2; /* Show with 20% opacity on hover */
+}.cart-link:hover i {
+  animation: cart-hover 3s infinite; /* Adjust animation duration as needed */
+  color: #333; /* Or your preferred hover color */
+  transition: color 0.8s ease; /* Add transition for icon color */
+}
+
+@keyframes cart-hover {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); } /* Make it slightly larger */
+  100% { transform: scale(1); }
+
+}.cart-link {
+  top: -20px;
+  position: relative;
+  
+}.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #000000;
+  color: white;
+  font-size: 0.8rem;
+  padding: 3px 6px;
+  border-radius: 50%;
+}.navbar-actions {
+  display: flex;
+  align-items: center;
+}.menu-toggle {
+  display: none; /* Hidden by default */
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #333;
+  margin-right: 15px;
+  transition: color 0.3s;
+}.menu-toggle:hover {
+  color: #8B0000;
+
+}.social-bar {
+  display: flex;
+  gap: 30px;
+}.social-icon {
+  margin-top: -40px;
+  color: #666;
+  font-size: 1.4rem;
+  transition: color 0.3s;
+}.social-icon:hover {
+  color: #000000;
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+.nav-list {
+      position: absolute;
+      top: 100%; /* Position below the navbar */
+      left: 0;
+      width: 100%;
+      background-color: #fff; /* Match header background */
+      flex-direction: column; /* Stack links vertically */
+      transform: translateY(-100%); /* Initially hidden */
+      opacity: 0;
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }
+
+.nav-list.active {
+      transform: translateY(0); /* Slide in when active */
+      opacity: 1;
+  }
+
+.nav-list li {
+      margin: 0; /* Remove horizontal margins */
+      padding: 5px; /* Add vertical padding */
+      border-bottom: 1px solid #eee; /* Add separators between links */
+  }
+
+.menu-toggle {
+      display: block; /* Show menu toggle */
+  }
+}
+
+/* Welcome Slider */
+.welcome-container {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.welcome-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  animation: kenburns 12s linear infinite; /* Ken Burns effect */
+}
+
+.welcome-slide:nth-child(2n) {
+  animation-direction: alternate-reverse; /* Reverse direction for every other image */
+}
+
+@keyframes kenburns {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.2) translate(-10%, 10%); }
+}
+
+.welcome-slide.active {
+  opacity: 1;
+}
+
+/* Welcome Overlay */
+.welcome-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  z-index: 1; /* Ensure overlay is on top */
+}
+.welcome-overlay h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px;
+  background-image: linear-gradient(to right, #f2d700, white); /* Gold to white gradient */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInOut 20s infinite; /* Combined fade in/out animation */
+}
+
+@keyframes fadeInOut {
+  0% {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  10% { /* Fade in over 2 seconds */
+      opacity: 1;
+      transform: translateY(0);
+  }
+  40% { /* Hold for 6 seconds */
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.chinese-phrase {
+  font-family: "KaiTi", "STKaiti", serif; /* Choose an appropriate Chinese font */
+  font-size: 2em; /* Adjust size as needed */
+  color: #f2d700; /* Gold color - adjust to your preference */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Optional text shadow */
+  margin-left: 10px; /* Add some space if placed after the h1 or tagline */
+}
+
+/* If placed within the <h1> */
+.welcome-overlay h1 .chinese-phrase {
+  display: inline-block; /* Make sure it flows with the h1 text */
+}
+
+/* If placed as a separate <p> element */
+.welcome-overlay .chinese-phrase {
+  margin-top: 10px; /* Add some space above */
+
+}
+  
+
+.menu-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color:  gold;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.2);
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  color: white;
+}
+
+/* Tab-based styles */
+.menu-categories.category-tabs {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #ddd;
+}
+.category-tabs .category-tab {
+  /* Base styles for the tabs */
+  padding: 10px 15px; /* Adjust padding as needed */
+  margin-right: 5px; /* Spacing between tabs */
+  cursor: pointer; /* Change cursor to pointer on hover to indicate interactivity */
+  background-color: #f0f0f0; /* Default background color */
+  border: 1px solid #ccc; /* Optional border */
+  border-radius: 5px; /* Optional rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and color */
+  color: #333; /* Default text color */
+  user-select: none; /* Prevent text selection on click/drag */
+}
+
+.category-tabs .category-tab:hover {
+  /* Hover effect */
+  background-color: gold; /* Slightly lighter background on hover */
+  color: #000000; /* Example: Change text color to blue on hover */
+  /* You can add other hover effects like: */
+  /* text-decoration: underline; */ /* Add underline on hover */
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.2); */ /* Add a subtle shadow */
+}
+
+.category-tabs .category-tab.active {
+  /* Styles for the active tab (when clicked) */
+  background-color: gold; /* Example: Blue background for active tab */
+  color: white; /* White text color for active tab */
+  border-color: #000; /* Match border color to background if you have a border */
+}
+
+.category-tabs .category-tab.active:hover {
+  /* Optional: Hover effect for the active tab (if you want something different) */
+  background-color: gold ;/* Darker blue on hover when active, for example */
+  color: white; /* Keep text white */
+  /* You could remove hover effect for active tab if you prefer */
+}
+/* Menu items */
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.item {
+  border: 1px solid white; /* White border */
+  padding: 15px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: relative; /* For positioning "Add to Cart" button */
+}
+
+.item img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 5px; /* Rounded corners for images */
+}
+
+.item h3 {
+  color: gold;
+  margin-bottom: 5px;
+}
+
+.item p {
+  color: gold;
+  margin-bottom: 10px;
+}
+
+.add-to-cart {
+  background-color: gold;
+  color: black;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.add-to-cart:hover {
+  background-color: #ffd700; /* Slightly darker gold on hover */
+}
+
+/* Modal styles (same as before) */
+/* Modal Container - The outer frame that covers the entire viewport */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity - semi-transparent background */
+}
+
+/* Modal Content - The actual modal box that appears in the center */
+.modal-content {
+  background-color: #fefefe; /* White background */
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  border-radius: 10px; /* Optional: Rounded corners */
+  position: relative; /* Needed for close button positioning */
+}
+
+/* Close Button - For closing the modal */
+.close-button {
+  color: #aaa;
+  position: absolute; /* Positioned relative to .modal-content */
+  top: 0;
+  right: 0;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 10px 15px; /* Add padding to make it easier to click */
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Size Options Container - Holds the size buttons */
+.size-options {
+  display: flex; /* Arrange buttons in a row */
+  justify-content: center; /* Center buttons horizontally */
+  gap: 15px; /* Space between buttons */
+  margin-top: 20px; /* Space from content above */
+}
+
+/* Size Button - Styles for each size option (Small, Medium, Large) */
+.size-button {
+  background-color: gold; /* Gold color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.size-button:hover {
+  background-color: gold; /* Lighter gold on hover */
+}
+
+.size-button.selected {
+  /* Style for the selected size button (optional) */
+  background-color: gold; /* Make selected button visually distinct */
+  border: 2px solid #000000; /* Example: Add a border */
+}
+
+/* --- Media Query for Responsiveness (Example - for smaller screens) --- */
+@media (max-width: 600px) {
+  .modal-content {
+      width: 95%; /* Make modal content wider on smaller screens */
+      margin: 20% auto; /* Adjust top margin if needed */
+      padding: 15px;
+  }
+
+  .size-options {
+      flex-direction: column; /* Stack size buttons vertically on small screens */
+      align-items: center; /* Center buttons when stacked */
+      gap: 10px; /* Reduce gap between stacked buttons */
+  }
+
+  .size-button {
+      width: 100%; /* Make buttons full width on small screens */
+      padding: 12px 15px; /* Adjust padding for stacked buttons */
+      text-align: center; /* Center text within buttons */
+  }
+}
+
+/* Cart Styles */
+.cart {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: gold;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.2);
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.cart h2 {
+  color: gold;
+  margin-bottom: 10px;
+}
+
+#cart-items {
+  margin-bottom: 10px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+}
+
+.cart-item-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.cart-item-price {
+  font-size: smaller;
+  color: white;
+}
+
+#cart-total {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: gold;
+}
+
+#checkout-button {
+  background-color: gold;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+#checkout-button:hover {
+  background-color: #ffd700;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) { 
+.menu-categories.category-tabs {
+    flex-direction: column; /* Stack tabs vertically */
+    align-items: center;
+  }
+.menu-categories.category-tab {
+    margin-bottom: 10px;
+    border-bottom: none;
+    border-right: 2px solid transparent; /* Highlight on the right */
+  }
+.menu-categories.category-tab.active {
+    border-right: 2px solid #c21010;
+  }
+.item {
+    padding: 10px;
+  }
+.cart {
+    top: auto; /* Reset top */
+    bottom: 20px; /* Stick to bottom on small screens */
+    left: 20px;
+    right: 20px;
+    width: calc(100% - 40px); /* Full width minus padding */
+  }
+}
+  
+  /* Add to Cart Button Styles */
+  .add-to-cart {
+    background-color: #d4af37;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease; 
+  }
+  
+  .add-to-cart:hover {
+    background-color: #f2d700;
+  }
+  
+  /* Cart Styles */
+  #cart {
+    position: sticky;
+    top: 20px; 
+    float: right; 
+    width: 300px; 
+    background-color: #f7e8c2; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+  }
+  
+  #cart h2 {
+    color: #d4af37; 
+    margin-bottom: 10px;
+  }
+  
+  #cart-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #cart-total {
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: right;
+  }
+  
+
+/* Footer Styles */
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+}.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}.footer-section {
+  flex: 1 1 250px;
+  margin-bottom: 20px;
+}.footer-section h2 {
+  color: gold;
+  margin-bottom: 15px;
+}.footer-section a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}.footer-section a:hover {
+  color: gold;
+}.quick-links ul {
+  list-style: none;
+  padding: 0;
+}.quick-links li {
+  margin-bottom: 10px;
+}.contact p {
+  margin-bottom: 10px;
+}.login input[type="text"],.login input[type="password"] {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+}.login button[type="submit"] {
+  background-color: gold;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}.newsletter p {
+  margin-bottom: 15px;
+}
+
+#newsletter-form {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 10px;
+}
+
+#newsletter-email {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+
+#newsletter-form button {
+  background-color: gold;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#newsletter-message {
+  margin-top: 10px;
+  color: green;
+}.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px; /* Add space below the icons */
+}.social-icon {
+  color: white;
+  font-size: 1.5em;
+  transition: color 0.3s ease;
+
+}.social-icons {
+display: flex;
+justify-content: center;
+gap: 1px;
+margin-bottom: 20px;
+}.social-icon {
+display: inline-flex; /* Use inline-flex to control size and alignment */
+align-items: center; /* Vertically center the icon */
+justify-content: center; /* Horizontally center the icon */
+width: 40px; /* Adjust size as needed */
+height: 40px; /* Adjust size as needed */
+border-radius: 50%; /* Make it a circle */
+background-color: #fff; /* Default background color */
+color: #fff; /* Default icon color */
+transition: all 0.3s ease; /* Smooth transition for hover effects */
+
+}.social-icon:hover {
+transform: scale(1.1); /* Slightly scale up on hover */
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
+}
+
+/* Specific styles for each icon (using their brand colors) */.social-icon i.fab.fa-facebook-f {
+color: #3b5998; /* Facebook blue */
+}.social-icon i.fab.fa-linkedin {
+color: #0077b5; /* LinkedIn blue */
+}.social-icon i.fab.fa-instagram {
+color: #e4405f; /* Instagram pink-red */
+}.social-icon i.fab.fa-twitter {
+color: #1da1f2; /* Twitter blue */
+}.social-icon i.fab.fa-tiktok {
+color: #000000; /* TikTok black */
+}.social-icon i.fab.fa-youtube {
+color: #ff0000; /* YouTube red */
+}.social-icon i.fab.fa-pinterest {
+color: #e60023; /* Pinterest red */
+
+}.footer-bottom {
+  background-color: #222;
+  padding: 80px 80px;
+  text-align: center;
+  font-size: 0.9em;
+}.footer-bottom p {
+  margin: 5px 0; /* Add some space between paragraphs */
+  color: #eee;
+}
+/* Responsive Design - Adjust as needed */
+@media (max-width: 768px) {
+.footer-section {
+      width: 45%; /* Two sections per row on smaller screens */
+      margin-bottom: 20px;
+  }
+.footer-section.developers { /* Developers section takes full width */
+      width: 100%;
+  }
+}
+
+/*... your existing CSS... */.sticky-chatbot {
+  position: fixed;
+  bottom: 120px; /* Adjust as needed to position above cart icon */
+  right: 20px;
+  z-index: 102; /* Higher than sticky cart */
+}.chatbot-icon {
+  background-color: gold;
+  padding: 10px;
+  border-radius: 100%;
+  cursor: pointer;
+}.chatbot-icon i {
+  font-size: 1.5em;
+}.chatbot-popup {
+  display: none; /* Initially hidden */
+  position: absolute;
+  bottom: 50px; /* Adjust as needed */
+  right: 0;
+  width: 300px; /* Adjust as needed */
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}.chatbot-popup.show {
+  display: block;
+}
+
+/* Sticky Cart */.sticky-cart {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}.cart-link {
+  display: flex;
+  align-items: center;
+  background-color: gold;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1em;
+}.cart-link i {
+  margin-right: 5px;
+}.cart-count {
+  background-color: black;
+  color: white;
+  padding: 3px 7px;
+  border-radius: 50%;
+  font-size: 0.8em;
+  margin-left: 5px;
+}

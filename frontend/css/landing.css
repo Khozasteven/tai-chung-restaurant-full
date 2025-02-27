@@ -1,0 +1,1121 @@
+/* Basic Styles */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: black;
+    color: #ffc400; 
+}.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header Styles */
+header {
+    background-color: #ffc400;
+    color: black;
+    padding: 10px 0;
+}.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}.logo img {
+    height: 150px; 
+    margin-left: 1-px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/*main */
+
+
+  /* Welcome Slider */
+  .welcome-container {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.welcome-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    animation: kenburns 12s linear infinite; /* Ken Burns effect */
+}
+
+.welcome-slide:nth-child(2n) {
+    animation-direction: alternate-reverse; /* Reverse direction for every other image */
+}
+
+@keyframes kenburns {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.2) translate(-10%, 10%); }
+}
+
+.welcome-slide.active {
+    opacity: 1;
+}
+
+/* Welcome Overlay */
+.welcome-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    z-index: 1; /* Ensure overlay is on top */
+}
+.welcome-overlay h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px;
+    background-image: linear-gradient(to right, #f2d700, white); /* Gold to white gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInOut 20s infinite; /* Combined fade in/out animation */
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    10% { /* Fade in over 2 seconds */
+        opacity: 1;
+        transform: translateY(0);
+    }
+    40% { /* Hold for 6 seconds */
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chinese-phrase {
+    font-family: "KaiTi", "STKaiti", serif; /* Choose an appropriate Chinese font */
+    font-size: 2em; /* Adjust size as needed */
+    color: #f2d700; /* Gold color - adjust to your preference */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Optional text shadow */
+    margin-left: 10px; /* Add some space if placed after the h1 or tagline */
+}
+
+/* If placed within the <h1> */
+.welcome-overlay h1 .chinese-phrase {
+    display: inline-block; /* Make sure it flows with the h1 text */
+}
+
+/* If placed as a separate <p> element */
+.welcome-overlay .chinese-phrase {
+    margin-top: 10px; /* Add some space above */
+
+}
+  
+
+/* Hero Section Styles */
+#hero {
+    text-align: center;
+    padding: 50px 0; 
+}
+
+#hero h1 {
+    font-size: 3em; 
+    margin-bottom: 10px; 
+}
+
+#hero p {
+    font-size: 1.2em; 
+    color: #fff; /* White color for <p> tags */
+}.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ffc400;
+    color: black;
+    text-decoration: none;
+    font-size: 1.2em; 
+    border-radius: 5px;
+    margin-top: 80px; 
+    margin-right: 80px;
+}
+     
+.cta-button {
+    margin-left: 500px;
+    background-color: gold;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0
+}
+
+
+
+/* Features Section Styles */
+#features {
+    background-color: #ffc400;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 30px 0;
+}.feature {
+    flex: 1 1 300px; /* Adjust width as needed */
+    margin-bottom: 20px;
+    text-align: center;
+}.feature img {
+    width: 100%; /* Make images longer */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.container {
+    display: flex; /* Enables Flexbox layout for the container */
+    flex-wrap: wrap; /* Allows items to wrap onto multiple lines if needed */
+    /* Other container styles (e.g., max-width, margin) */
+    max-width: 960px;
+    margin: 0 auto;
+    
+}
+/* ... other styles ... */
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Key for responsiveness */
+}
+
+.main-content {
+    flex: 2; /* Takes up 2/3 of the space */
+    padding: 20px;
+}
+
+.sidebar {
+    flex: 1; /* Takes up 1/3 of the space */
+    padding: 20px;
+    border-left: 1px solid #ccc; /* Optional separator line */
+    background-color: #f8f8f8; /* Optional background color */
+}
+
+.trends-teaser {
+    padding: 40px 0;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.trends-teaser h2 {
+    margin-bottom: 10px;
+}
+
+.trends-teaser p {
+    margin-bottom: 20px;
+}
+
+.trends-teaser .cta-button { /* Style your button here */
+    background-color: gold;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Remove underline from link */
+}
+
+.trends-teaser .cta-button:hover {
+    background-color: #e0ac00; /* Darker gold on hover */
+}
+
+/* ... rest of your CSS ... */
+
+/* Media query for responsiveness (adjust breakpoint as needed) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack elements vertically */
+    }
+    .sidebar {
+        border-left: none;
+        border-top: 1px solid #ccc;
+    }
+}
+/* Menu Section Styles */
+#menu {
+    background-color: #ffc400; 
+    color: black;
+    padding: 30px 0; 
+}.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0; 
+    border-bottom: 1px solid black; 
+}.menu-item img {
+    height: 100px; 
+    margin-right: 20px; 
+}
+
+/* About Section Styles */
+#about {
+    padding: 30px 0; 
+}
+
+#about.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#about img {
+    width: 45%; 
+    margin-right: 20px; 
+}
+
+/* Contact Section Styles */
+#contact {
+    background-color: #ffc400;
+    color: black;
+    padding: 30px 0; 
+}
+
+.blog-section {
+    padding: 40px 0; /* Adds 40px of padding to the top and bottom of the section */
+    background-color: #f8f8f8; /* Sets a light gray background color */
+  }
+  
+  .blog-section .container {
+    max-width: 960px; /* Limits the width of the content inside the section to 960px */
+    margin: 0 auto; /* Centers the container horizontally */
+  }
+  
+  .blog-section h2 {
+    text-align: center; /* Centers the "Latest Blog Posts" heading */
+    margin-bottom: 20px; /* Adds 20px of margin below the heading */
+  }
+  
+  .blog-grid {
+    display: grid; /* Enables CSS Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Creates responsive columns */
+    gap: 20px; /* Adds 20px of spacing between grid items */
+  }
+  
+  .blog-post {
+    border: 1px solid #ddd; /* Adds a light gray border around each blog post */
+    padding: 20px; /* Adds 20px of padding inside each blog post */
+    border-radius: 5px; /* Rounds the corners of the blog post boxes */
+    background-color: #fff; /* Sets a white background color for the blog posts */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Adds a subtle shadow */
+  }
+  
+  .blog-post img {
+    max-width: 100%; /* Makes the image responsive, so it doesn't overflow its container */
+    height: auto; /* Maintains the image's aspect ratio */
+    margin-bottom: 10px; /* Adds 10px of margin below the image */
+    display: block; /* Prevents image from creating a small space below it */
+  }
+  
+  .blog-post h3 {
+    margin-bottom: 10px; /* Adds 10px of margin below the title */
+  }
+  
+  .blog-post p {
+    margin-bottom: 10px; /* Adds 10px of margin below the paragraph */
+  }
+  
+  .blog-post a {
+    color: #007bff; /* Sets a blue color for the "Read More" link */
+    text-decoration: none; /* Removes the underline from the link */
+  }
+  
+  .blog-post a:hover {
+    text-decoration: underline; /* Adds the underline back on hover */
+    color: #0056b3; /* Darker blue on hover */
+  }
+
+  /* --- Testimonials Section Styles --- */
+.testimonials-section {
+    padding: 40px 0;
+    background-color: #f0f0f0; /* Light gray background */
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    margin-bottom: 30px;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    font-style: italic;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.testimonial-author {
+    font-style: normal;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #333;
+    text-align: right;
+}
+
+
+/* --- Map --- */
+.map-container {
+  margin-top: 2rem;
+  width: 100%; /* Ensure map takes full width */
+}
+
+#map {
+  height: 600px; /* Adjust as needed */
+  border-radius: var(--border-radius);
+  border: 2px solid var(--gold);
+}
+.map-container h2{
+ color: var(--white);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+
+.leaflet-control-zoom { /* Style the zoom control */
+  background-color: gold; /* Example */
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: #000; /* Example: White background */
+  border-radius: 5px;    /* Example: Rounded corners */
+}
+
+
+.leaflet-popup-content {
+  font-family: 'Poppins', sans-serif; /* Match your site's font */
+  font-size: 14px;
+}
+
+
+.leaflet-popup-tip {
+  background-color: gold; /* Example: Blue tip */
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: gold; /* Example: White background */
+  border-radius: 5px;    /* Example: Rounded corners */
+}
+
+
+.leaflet-popup-content {
+  font-family: 'Poppins', sans-serif; /* Match your site's font */
+  font-size: 14px;
+}
+
+
+.leaflet-popup-tip {
+  background-color: #000000; /* Example: Blue tip */
+}
+
+/* --- Footer Styles --- */
+.site-footer {
+    background-color: black;
+    color: #eee;
+    padding: 3rem 0; /* Slightly increased top/bottom padding for better visual breathing room */
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Reverted to side padding, removed negative padding which was likely a mistake */
+    gap: 20px; /* Added gap between footer sections for horizontal spacing */
+}
+
+.footer-section {
+    flex: 1 1 250px; /* Adjust 250px as needed, can try smaller values if sections are too wide */
+    margin-bottom: 2rem;
+}
+
+.footer-section h2 {
+    color: #ffc400;
+    margin-bottom: 1rem;
+}
+
+.footer-section a {
+    color: #eee;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #ffc400;
+}
+
+/* Specific styles for Login Footer Section - Adjusted Right Margin and Width */
+.footer-section.login {
+    margin-right: 30px; /* Added right margin to create space from the edge */
+    margin-left: 75px;
+    flex-basis: 280px; /* Slightly increased flex-basis to give login section a bit more initial width */
+    flex-grow: 0; /* Prevent login section from growing excessively and pushing to the right edge */
+    max-width: 350px; /* Increased max-width slightly for login form if needed */
+}
+
+.footer-section.login .login-container {
+    width: 100%;
+    max-width: none; /* Removed max-width here as it's controlled by .footer-section.login now */
+    background-color: #ffc400;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0; /* Removed auto margin, as centering in footer-section.login is not needed now */
+}
+
+.footer-section.login .login-container h1 {
+    text-align: left; /* Aligned login heading to the left within its container */
+    margin-bottom: 1rem;
+    color: #ffc400;
+    font-size: 1.5em;
+}
+
+
+/* -----  CSS for Login Form ELEMENTS *WITHIN* the Footer Login Section ----- */
+.login input[type="text"],
+.login input[type="password"] { /* Target inputs within login section */
+    width: 100%;
+    padding: 0.4rem; /* Slightly reduced padding for footer form */
+    margin-bottom: 0.8rem; /* Slightly reduced margin for footer form */
+    border: 1px solid #ccc; /* Changed border color to a lighter gray #ccc for forms */
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.login button[type="submit"] { /* Target submit button within login section */
+    background-color: black; /* Assuming gold is #ffc400 or var(--gold) */
+    color: #fff;
+    padding: 0.8rem 1.5rem; /* Slightly reduced button padding for footer */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    display: block;
+}
+
+.login button[type="submit"]:hover { /* Hover state for login button */
+    background-color: #e0ac00; /* Darker gold for hover, adjust if you have var(--dark-gold) */
+}
+
+.login .form-group { /* Target form-group within login section */
+    margin-bottom: 0.8rem; /* Slightly reduced margin for footer form groups */
+}
+
+.login label { /* Target labels within login section */
+    display: block;
+    margin-bottom: 0.3rem;
+    color: black;
+    font-weight: bold;
+}
+
+.login .password-input-container { /* Password container in login section */
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.login #toggle-password { /* Toggle password button in login section */
+    position: absolute;
+    right: -1px;
+    top: 16px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #777;
+    font-size: 1.2rem;
+}
+
+.login .remember-me { /* Remember me checkbox area in login section */
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem; /* Slightly reduced margin for footer */
+}
+
+.login .remember-me label { /* Remember me label in login section */
+    margin-left: 0.5rem;
+    margin-bottom: 0;
+    color: black;
+}
+
+.login .form-message { /* Form message area in login section */
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+/* Developer Footer Section Styles - Addressing Alignment Issue */
+.footer-section.developers {
+    display: flex;              /* Enable flexbox for developer section */
+    flex-direction: column;     /* Stack heading and link vertically */
+    justify-content: flex-start; /* Align items to the start (top) */
+    align-items: flex-start;    /* Align items to the start (left) for horizontal alignment */
+}
+
+.developers h2 {
+    color: #ffc400;
+    margin-bottom: 0.5rem; /* Reduced margin below heading */
+    font-size: 1.2em;
+    /* Removed margin-bottom: 1rem; which might have contributed to visual misalignment */
+}
+
+.developers ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Reset default ul margins */
+}
+
+.developers li {
+    margin-bottom: 0; /* Removed margin-bottom from list items to tighten vertical spacing */
+}
+
+.developers a {
+    color: #eee;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    /* Removed font-weight: normal; - developer links now inherit default font weight */
+}
+
+.developers a:hover {
+    color: #ffc400;
+}
+
+
+/* Newsletter Footer Section Styles (adjust as needed) */
+.newsletter p {
+    margin-bottom: 15px;
+}
+
+#newsletter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#newsletter-email {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+
+#newsletter-form button {
+    background-color: #ffc400;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#newsletter-form button:hover {
+    background-color: #e0ac00;
+}
+
+#newsletter-message {
+    margin-top: 10px;
+    color: green;
+}
+
+
+/* Social Icons Footer Section Styles (adjust as needed) */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+/* --- Footer Styles - Variation 1: Modern Minimalist (Updated Headings) --- */
+/* --- OR --- */
+/* --- Footer Styles - Variation 2: Decorative Pattern (Updated Headings) --- */
+.site-footer {
+    background-color: #1a1a1a; /* Darker background */
+    color: #ddd; /* Lighter text for contrast */
+    padding: 3rem 0;
+    font-family: 'Poppins', sans-serif;
+    /* background-image: url('/frontend/img/footer-pattern.png');  (If using Variation 2, keep this line) */
+    /* background-repeat: repeat; (If using Variation 2, keep this line) */
+    /* background-size: contain; (If using Variation 2, keep this line) */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1 1 250px;
+    margin-bottom: 2rem;
+}
+
+.footer-section h2 {
+    color: #ffc400; /* Keep gold for headings */
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ffc400; /* Gold underline for headings */
+    padding-bottom: 0.5rem;
+    text-align: center; /*  🎉  CENTERED HEADINGS - ADDED THIS LINE 🎉 */
+}
+
+.footer-section a {
+    color: #ddd; /* Lighter link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #ffc400; /* Gold hover color */
+}
+/* --- Business Hours Footer Section Styles --- */
+.footer-section.hours ul.business-hours-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section.hours ul.business-hours-list li {
+    margin-bottom: 0.3rem;
+    color: #eee; /* Match other footer text color */
+    font-size: 0.95em; /* Adjust font size if needed */
+}
+/* Social Icons - Minimalist Style */
+.footer-section.social .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-section.social .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent; /* Transparent background for icons */
+    border: 1px solid #ddd; /* Subtle border */
+    color: #ddd; /* Lighter icon color */
+    transition: all 0.3s ease;
+}
+
+.footer-section.social .social-icon:hover {
+    transform: scale(1.1);
+    background-color: #ffc400; /* Gold background on hover */
+    color: #1a1a1a; /* Dark icon color on hover */
+    border-color: #ffc400; /* Gold border on hover */
+    box-shadow: none; /* Removed box shadow */
+}
+/* --- Quick Links Footer Section Styles --- */
+.footer-section.quick-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section.quick-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section.quick-links a {
+    color: #eee;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section.quick-links a:hover {
+    color: #ffc400;
+}
+
+/* Footer Bottom (Copyright) - Minimalist Style */
+.footer-bottom {
+    background-color: #111; /* Even darker footer bottom */
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.9em;
+    color: #ddd; /* Lighter copyright text */
+    width: 100%;
+    margin-top: 3rem;
+}
+
+/* --- Responsive Design - Minimalist Footer --- */
+@media (max-width: 768px) {
+    /* Keep responsive adjustments from previous CSS if needed */
+}
+
+/* --- Chatbot Styles --- */
+#chatbot {
+    position: fixed; /* Fixed position at the bottom right */
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Clip rounded corners */
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif; /* Keeping your font */
+}
+/* --- Chatbot Icon Styles --- */
+#chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #ffc400; /* Gold background for icon */
+    color: black;
+    border-radius: 50%; /* Make it a circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1001; /* Icon should be above chatbot */
+}
+
+/* --- Chatbot Popup Message Styles --- */
+#chatbot-popup-message {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: white;
+    color: black;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-size: 0.9em;
+    white-space: nowrap;
+    z-index: 1002;
+   display: none;
+}
+
+#chatbot-icon:hover {
+    background-color: #ffb300; /* Darker gold on hover */
+    transform: scale(1.1); /* Slightly scale up on hover */
+}
+
+#chatbot-icon i {
+    font-size: 1.8em; /* Size of the chat icon */
+}
+
+/* --- Chatbot Styles --- */
+#chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+}
+
+#chatbot-header {
+    background-color: #f0f0f0;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+#chatbot-header h2 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+#chatbot-output {
+    padding: 15px;
+    height: 300px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 25px; /* Increased padding at bottom for scroll spacing */
+}
+
+.chatbot-message {
+    margin-bottom: 12px; /* Slightly increased margin */
+    padding: 12px 18px; /* Adjusted padding */
+    border-radius: 25px; /* More rounded corners */
+    max-width: 80%;
+    word-wrap: break-word;
+    clear: both;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-size: 0.95em; /* Slightly smaller, more professional text */
+}
+
+.bot-message {
+    background-color: #f8f8f8; /* Very light gray for bot */
+    color: #444; /* Darker text for bot for better readability on light background */
+    align-self: flex-start;
+    float: left;
+    text-align: left;
+    border-top-left-radius: 5px; /* Slightly less rounded on the left for bot */
+}
+
+.user-message {
+    background-color: gold; /* Very light blue for user */
+    color: #000; /* Darker text for user for readability */
+    align-self: flex-end;
+    float: right;
+    text-align: right;
+    border-bottom-right-radius: 7px; /* Slightly less rounded on the right for user */
+}
+
+
+.chatbot-input-area {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #eee;
+    background-color: #fafafa;
+
+}
+
+.menu-button {
+    background-color: skyblue; /* Gold background - keeping your theme */
+    color: black;
+    border: none;
+    padding: 8px 15px; /* Add padding for button size */
+    border-radius: 20px; /* Rounded corners to match chat bubbles */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 0.9em; /* Slightly smaller font size to fit nicely */
+    margin-top: 15px; /* Add space above the button within the message */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.menu-button:hover {
+    background-color: #f0f0f0; /* Slightly darker gold on hover */
+}
+
+#chatbot-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px; /* More rounded input */
+    margin-right: 10px;
+    font-size: 0.95em; /* Match input font size to chat text */
+}
+
+#chatbot-input::placeholder {
+    color: #999;
+    font-size: 0.95em; /* Match placeholder font size */
+}
+
+#chatbot-send-button {
+    background-color: #ffc400; /* Gold send button - keeping your color */
+    color: black;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#chatbot-send-button:hover {
+    background-color: #ffb300;
+}
+
+/* --- Media Queries for Chatbot Responsiveness --- */
+@media (max-width: 768px) { /* Styles for tablets and smaller screens */
+    #chatbot {
+        width: 95%; /* Take up more width on smaller screens */
+        max-width: 400px; /* But still have a max width */
+        border-radius: 10px; /* Slightly less rounded corners on smaller screens */
+    }
+
+    #chatbot-output {
+        height: 350px; /* Maybe increase height slightly on tablets */
+        padding: 12px; /* Slightly reduce padding in output area */
+    }
+
+    .chatbot-message {
+        font-size: 0.9em; /* Slightly smaller font size on smaller screens */
+        margin-bottom: 10px; /* Reduce message margin */
+        padding: 10px 15px; /* Reduce message padding */
+    }
+
+    .bot-message {
+        margin-right: 10px; /* Reduce horizontal margins for messages */
+    }
+
+    .user-message {
+        margin-left: 10px; /* Reduce horizontal margins for messages */
+    }
+
+    #chatbot-input-area {
+        padding: 8px; /* Reduce padding in input area */
+        margin-top: 15px; /* Reduce space above input area */
+    }
+
+    #chatbot-input {
+        padding: 8px; /* Reduce input padding */
+        font-size: 0.9em; /* Match input font size */
+    }
+
+    #chatbot-input::placeholder {
+        font-size: 0.9em; /* Match placeholder font size */
+    }
+
+    .menu-button {
+        font-size: 0.85em; /* Slightly smaller menu button text */
+        padding: 6px 12px; /* Reduce button padding */
+        border-radius: 15px; /* Less rounded buttons on smaller screens */
+        margin-top: 10px; /* Reduce button top margin */
+    }
+}
+
+@media (max-width: 576px) { /* Styles for very small screens (phones) */
+    #chatbot {
+        width: 100%; /* Take full width on phones */
+        max-width: none; /* No max width on phones */
+        border-radius: 0; /* No rounded corners on very small screens (optional) */
+        bottom: 0;      /* Anchor to bottom on phones */
+        top: auto;       /* Reset top centering on phones */
+        left: 0;        /* Align to left edge on phones */
+        transform: none; /* Remove centering transform on phones */
+        height: 80vh;   /* Take up most of the screen height on phones */
+    }
+
+    #chatbot-header {
+        padding: 10px; /* Reduce header padding on phones */
+    }
+
+    #chatbot-header h2 {
+        font-size: 1em; /* Smaller header text on phones */
+    }
+
+    #chatbot-output {
+        height: 70vh; /* Adjust output height on phones */
+        padding: 10px; /* Further reduce output padding on phones */
+    }
+
+    .chatbot-message {
+        font-size: 0.85em; /* Even smaller message font on phones */
+        margin-bottom: 8px; /* Further reduce message margin on phones */
+        padding: 8px 12px; /* Further reduce message padding on phones */
+    }
+
+    #chatbot-input-area {
+        padding: 6px; /* Further reduce input area padding on phones */
+        margin-top: 10px; /* Further reduce input area top margin on phones */
+    }
+
+    #chatbot-input {
+        padding: 6px; /* Further reduce input padding on phones */
+        font-size: 0.85em; /* Match input font size on phones */
+        border-radius: 15px; /* Less rounded input on phones */
+    }
+
+    #chatbot-input::placeholder {
+        font-size: 0.85em; /* Match placeholder font size on phones */
+    }
+
+    #chatbot-send-button {
+        width: 35px;    /* Smaller send button on phones */
+        height: 35px;   /* Smaller send button on phones */
+    }
+
+    .menu-button {
+        font-size: 0.8em; /* Even smaller menu button text on phones */
+        padding: 5px 10px; /* Further reduce button padding on phones */
+        border-radius: 10px; /* Even less rounded buttons on phones */
+        margin-top: 8px; /* Further reduce button top margin on phones */
+    }
+}

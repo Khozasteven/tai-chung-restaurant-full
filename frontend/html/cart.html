@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tai Chung Restaurant - Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/cart.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="#" class="logo-link">
+            <img src="/frontend/img/1.png" alt="Tai Chung Logo" class="logo">
+        </a>
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="our menu.html">Menu</a></li>
+            <li><a href="order now.html">Order Now</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="cart.html" class="cart-link active">
+                <i class="fa-solid fa-cart-shopping"></i> Cart
+                <span class="cart-count">0</span>
+            </a></li>
+        </ul>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <div class="social-bar">
+           <a href="https://www.facebook.com/share/1BCB6amT6M/" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/public-profile/settings" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/tai213690?igsh=YzljYTk1ODg3Zg==" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/ChungTai35858?t=M5K80HKeUmZJHeRZDU9NWQ&s=09" class="social-icon" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.tiktok.com/@tai.chung64?_t=ZM-8stRWGtqriw&_r=1" class="social-icon" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+            <a href="https://youtube.com/@taichung-i7c?si=V9AW1zLIyGMmSZA6" class="social-icon" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+            <a href="https://pin.it/5OmZNAm2I" class="social-icon" aria-label="Pinterest" target="_blank" rel="noopener noreferrer"><i class="fab fa-pinterest"></i></a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="cart-container">
+        <h1>Your Cart</h1>
+
+        <div id="cart-items-container">
+            <div class="cart-item">
+                <img src="../placeholder-item.jpg" alt="Item Image" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h3 class="cart-item-title">Item Name</h3>
+                    <p class="cart-item-price">R10.00</p>
+                    <div class="cart-item-quantity">
+                        <button class="quantity-btn decrease-quantity">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn increase-quantity">+</button>
+                    </div>
+                </div>
+                <button class="remove-item" aria-label="Remove Item"><i class="fas fa-times"></i></button>
+            </div>
+             <div class="cart-item">
+                <img src="../placeholder-item2.jpg" alt="Item Image" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h3 class="cart-item-title">Item Name 2</h3>
+                    <p class="cart-item-price">R25.50</p>
+                    <div class="cart-item-quantity">
+                        <button class="quantity-btn decrease-quantity">-</button>
+                        <input type="number" class="quantity-input" value="3" min="1">
+                        <button class="quantity-btn increase-quantity">+</button>
+                    </div>
+                </div>
+                <button class="remove-item" aria-label="Remove Item"><i class="fas fa-times"></i></button>
+            </div>
+             <div class="cart-item">
+                <img src="../placeholder-item3.jpg" alt="Item Image" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h3 class="cart-item-title">Item Name 3</h3>
+                    <p class="cart-item-price">R8.75</p>
+                    <div class="cart-item-quantity">
+                        <button class="quantity-btn decrease-quantity">-</button>
+                        <input type="number" class="quantity-input" value="2" min="1">
+                        <button class="quantity-btn increase-quantity">+</button>
+                    </div>
+                </div>
+                <button class="remove-item" aria-label="Remove Item"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+         <div class="empty-cart-message" style="display: none;">
+            <p>Your cart is currently empty.</p>
+        </div>
+        <div id="cart-summary">
+            <p id="cart-subtotal">Subtotal: R0.00</p>
+            <p id="cart-tax">Tax (15%): R0.00</p>
+            <p id="cart-total">Total: R0.00</p>
+             <div class="cart-actions">
+                <button id="continue-shopping">Continue Shopping</button>
+                <button id="checkout-button">Proceed to Checkout</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section contact">
+            <h2>Contact Us</h2>
+            <p>13 Belgravia Road, Athlone</p>
+            <p>Phone: <a href="tel:+27216964870">+27 (021) 696 4870</a></p>
+            <p>Email: <a href="mailto:tai213690@gmail.com">tai213690@gmail.com</a></p>
+            <p><a href="https://www.google.com/maps/place/Tai+Chung/@-33.9643158,18.5146237,17z/data=!3m1!4b1!4m6!3m5!1s0x1dcc491b171c29d9:0x889004e9a74cd191!8m2!3d-33.9643158!4d18.5172071!16s%2Fg%2F11q_9t_86h?entry=ttu" target="_blank" rel="noopener noreferrer">View on Google Maps</a></p>
+        </div>
+
+        <div class="footer-section newsletter">
+            <h2>Stay Updated</h2>
+            <p>Sign up for our newsletter!</p>
+            <form id="newsletter-form" method="post">
+                <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+                 <p class="form-message" id="newsletter-message"></p>
+            </form>
+        </div>
+
+        <div class="footer-section social">
+            <h2>Follow Us</h2>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/1BCB6amT6M/" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/public-profile/settings" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/tai213690?igsh=YzljYTk1ODg3Zg==" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/ChungTai35858?t=M5K80HKeUmZJHeRZDU9NWQ&s=09" class="social-icon" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.tiktok.com/@tai.chung64?_t=ZM-8stRWGtqriw&_r=1" class="social-icon" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                <a href="https://youtube.com/@taichung-i7c?si=V9AW1zLIyGMmSZA6" class="social-icon" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                <a href="https://pin.it/5OmZNAm2I" class="social-icon" aria-label="Pinterest" target="_blank" rel="noopener noreferrer"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-section developers">
+            <h2>Developed By</h2>
+            <ul>
+                <li><a href="https://github.com/Khozasteven" target="_blank" rel="noopener noreferrer">SecureWave IT Consultants</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 Tai Chung Restaurant. All rights reserved.</p>
+    </div>
+</footer>
+<script src="../js/cart.js" defer></script>
+</body>
+</html>

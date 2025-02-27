@@ -1,0 +1,460 @@
+
+/* Basic Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Header and Navigation */
+header {
+  background-color: gold;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px;
+  max-width: 1500px;
+  margin: 0 auto;
+}.navbar-content {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}.logo {
+  max-height: 180px;
+  margin-right: 20px;
+}.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  bottom: 20px;
+  display: flex;
+  transition: transform 0.3s ease-in-out; /* Smooth transition for mobile menu */
+}.nav-link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 800;
+  margin: 8px;
+  padding: 8px;
+  border-radius: 5px;
+  transition: background-color 0.8s, color 0.8s;
+
+}.nav-link:hover {
+  background-color: #000000;
+  color: #fff;
+  font-weight: 500; 
+  font-family: 'Roboto', sans-serif; /* Change font family to Roboto on hover */
+
+
+}.cart-link::before {
+  content: '';
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.8s ease;
+  z-index: -1; /* Place behind the icon */
+
+}.cart-link:hover::before {
+  opacity: 0.2; /* Show with 20% opacity on hover */
+}.cart-link:hover i {
+  animation: cart-hover 3s infinite; /* Adjust animation duration as needed */
+  color: #333; /* Or your preferred hover color */
+  transition: color 0.8s ease; /* Add transition for icon color */
+}
+
+@keyframes cart-hover {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); } /* Make it slightly larger */
+  100% { transform: scale(1); }
+
+}.cart-link {
+  top: -20px;
+  position: relative;
+  
+}.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #000000;
+  color: white;
+  font-size: 0.8rem;
+  padding: 3px 6px;
+  border-radius: 50%;
+}.navbar-actions {
+  display: flex;
+  align-items: center;
+}.menu-toggle {
+  display: none; /* Hidden by default */
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #333;
+  margin-right: 15px;
+  transition: color 0.3s;
+}.menu-toggle:hover {
+  color: #8B0000;
+
+}.social-bar {
+  display: flex;
+  gap: 30px;
+}.social-icon {
+  margin-top: -40px;
+  color: #666;
+  font-size: 1.4rem;
+  transition: color 0.3s;
+}.social-icon:hover {
+  color: #000000;
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+.nav-list {
+      position: absolute;
+      top: 100%; /* Position below the navbar */
+      left: 0;
+      width: 100%;
+      background-color: #fff; /* Match header background */
+      flex-direction: column; /* Stack links vertically */
+      transform: translateY(-100%); /* Initially hidden */
+      opacity: 0;
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }
+
+.nav-list.active {
+      transform: translateY(0); /* Slide in when active */
+      opacity: 1;
+  }
+
+.nav-list li {
+      margin: 0; /* Remove horizontal margins */
+      padding: 5px; /* Add vertical padding */
+      border-bottom: 1px solid #eee; /* Add separators between links */
+  }
+
+.menu-toggle {
+      display: block; /* Show menu toggle */
+  }
+}
+
+  /* Main Content Styles */
+.main-content {
+    padding: 4rem 0; /* Adjust padding as needed */
+}
+
+.contact-section {
+    text-align: center;
+    color: #ffc400;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem; /* Adjust margin as needed */
+}
+
+.contact-info {
+    background-color: #111;
+    border: 1px solid #333;
+    padding: 2rem;
+    text-align: left; /* Align text to the left */
+}
+
+.contact-info h2 {
+    color: gold;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+}
+
+.contact-info a {
+    color: gold;
+    text-decoration: none;
+}
+  
+  /* --- Login Form Styles --- */
+  .login-section { 
+    background-color: #ffc400;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }.login-section h2 {
+    margin-bottom: 1rem;
+    color: var(--black);
+  }.form-group {
+    margin-bottom: 1rem;
+  }.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }.form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }.login-section button {
+    background-color: var(--gold);
+    color: var(--black);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }.login-section button:hover {
+    background-color: var(--dark-gold);
+  }
+  
+  /* --- Map --- */
+.map-container {
+    margin-top: 2rem;
+    width: 100%; /* Ensure map takes full width */
+}
+
+#map {
+    height: 600px; /* Adjust as needed */
+    border-radius: var(--border-radius);
+    border: 2px solid var(--gold);
+}
+.map-container h2{
+   color: var(--white);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+  
+.leaflet-control-zoom { /* Style the zoom control */
+    background-color: gold; /* Example */
+}
+
+.leaflet-popup-content-wrapper {
+    background-color: #000; /* Example: White background */
+    border-radius: 5px;    /* Example: Rounded corners */
+ }
+
+
+.leaflet-popup-content {
+    font-family: 'Poppins', sans-serif; /* Match your site's font */
+    font-size: 14px;
+ }
+
+
+.leaflet-popup-tip {
+    background-color: gold; /* Example: Blue tip */
+ }
+
+ .leaflet-popup-content-wrapper {
+    background-color: gold; /* Example: White background */
+    border-radius: 5px;    /* Example: Rounded corners */
+ }
+
+
+.leaflet-popup-content {
+    font-family: 'Poppins', sans-serif; /* Match your site's font */
+    font-size: 14px;
+ }
+
+
+.leaflet-popup-tip {
+    background-color: #000000; /* Example: Blue tip */
+ }
+ /* --- Footer Styles --- */.site-footer {
+    background-color: var(--black);
+    color: var(--light-gray);
+    padding: 2rem 0;
+    font-family: 'Poppins', sans-serif;
+  }.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px; /* Consistent side padding */
+  }.footer-section {
+    flex: 1 1 250px;
+    margin-bottom: 2rem;
+  }.footer-section h2 {
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }.footer-section a {
+    color: var(--light-gray);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }.footer-section a:hover {
+    color: var(--gold);
+  }.quick-links ul {
+    list-style: none;
+    padding: 0;
+  }.quick-links li {
+    margin-bottom: 10px;
+  }.contact p {
+    margin-bottom: 10px;
+  }.login input[type="text"],.login input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+  }.login button[type="submit"] {
+    background-color: var(--gold);
+    color: var(--black);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }.login button[type="submit"]:hover {
+    background-color: var(--dark-gold);
+  }.newsletter p {
+    margin-bottom: 15px;
+  }
+  
+  #newsletter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  #newsletter-email {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+  }
+  
+  #newsletter-form button {
+    background-color: var(--gold);
+    color: var(--black);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #newsletter-form button:hover {
+    background-color: var(--dark-gold);
+  }
+  
+  #newsletter-message {
+    margin-top: 10px;
+    color: green;
+  }.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #333; /* Default icon color */
+    transition: all 0.3s ease;
+  }.social-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Specific styles for each icon (using their brand colors) */.social-icon i.fab.fa-facebook-f {
+    color: #3b5998;
+  }.social-icon i.fab.fa-linkedin {
+    color: #0077b5;
+  }.social-icon i.fab.fa-instagram {
+    color: #e4405f;
+  }.social-icon i.fab.fa-twitter {
+    color: #1da1f2;
+  }.social-icon i.fab.fa-tiktok {
+    color: #000000;
+  }.social-icon i.fab.fa-youtube {
+    color: #ff0000;
+  }.social-icon i.fab.fa-pinterest {
+    color: #e60023;
+  }.footer-bottom {
+    background-color: #222;
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.9em;
+    color: #eee;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+  .footer-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+  .footer-section {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+  }
+   
+  /*... your existing CSS... */.sticky-chatbot {
+    position: fixed;
+    bottom: 120px; /* Adjust as needed to position above cart icon */
+    right: 20px;
+    z-index: 102; /* Higher than sticky cart */
+  }.chatbot-icon {
+    background-color: gold;
+    padding: 10px;
+    border-radius: 100%;
+    cursor: pointer;
+  }.chatbot-icon i {
+    font-size: 1.5em;
+  }.chatbot-popup {
+    display: none; /* Initially hidden */
+    position: absolute;
+    bottom: 50px; /* Adjust as needed */
+    right: 0;
+    width: 300px; /* Adjust as needed */
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+  }.chatbot-popup.show {
+    display: block;
+  }
+  
+  /* Sticky Cart */.sticky-cart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+  }.cart-link {
+    display: flex;
+    align-items: center;
+    background-color: gold;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+  }.cart-link i {
+    margin-right: 5px;
+  }.cart-count {
+    background-color: black;
+    color: white;
+    padding: 3px 7px;
+    border-radius: 50%;
+    font-size: 0.8em;
+    margin-left: 5px;
+  }
