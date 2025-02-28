@@ -1,0 +1,4 @@
+runtime: python312  # Or python311, depending on your Python version in WSL
+entrypoint: gunicorn -b :$PORT app:app
+
+instance_class: F1
