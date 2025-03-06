@@ -1,0 +1,354 @@
+/* login.css */
+
+/* --- Variables --- */
+:root {
+    --gold: #ffc400;
+    --dark-gold: #b08d2f;
+    --black: #1a1a1a;
+    --gray: #333;
+    --light-gray: #f4f4f4;
+    --spacing: 1rem;
+    --border-radius: 8px;
+  }
+  
+  /* --- Basic Reset --- */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-gray);
+    color: var(--gray);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* --- Header & Navigation --- */
+  .navbar {
+    background-color: var(--black);
+    color: var(--gold);
+    padding: var(--spacing);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  }
+  
+  .logo-link {
+    display: inline-block;
+  }
+  
+  .logo {
+    max-height: 150px;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap; /* wrap the links in small screen */
+  
+  }
+  
+  .nav-list li {
+    margin: 0 1rem;
+  }
+  
+  .nav-list a {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    display: flex;          /* Make the <a> a flex container */
+    align-items: center;    /* Vertically center content */
+  }
+  
+  .nav-list a i {
+    margin-right: 0.3rem;  /* Add some spacing between icon and text */
+  }
+  
+  .nav-list a:hover {
+    color: var(--dark-gold);
+  }
+  .nav-list .active{
+    border: solid 1px var(--gold);
+    border-radius: var(--border-radius);
+  }
+  
+  .cart-link {
+    top: 80px;
+    display: flex;
+    align-items: center;
+  }
+  .cart-link .cart-count{
+  background-color: var(--gold);
+  color: var(--black);
+  border-radius: 50%;
+  padding: 0.2em 0.6em;
+  
+  }
+  
+  .menu-toggle {
+    display: none;
+    cursor: pointer;
+    color: var(--gold);
+    font-size: 1.5rem;
+  }
+  .social-bar {
+    display: flex; /* Arrange icons horizontally */
+    gap: 20px; /* Adjust spacing between icons */
+    /* or use margin */
+    /* margin-left: auto;  Push to the right if needed */
+    /* margin-right: 10px; */
+    align-items: center; /* Vertically align icons */
+}
+
+.social-bar .social-icon { /* Style the individual icons */
+    font-size: 1.5em; /* Adjust icon size */
+    color: gold; /* Default icon color */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.social-bar .social-icon:hover {
+    color: #f4f4f4 /* Color on hover */
+}
+
+/* Optional: If you want to put the social bar to the right */
+.social-icons-wrapper { /* Or any name you prefer */
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+    align-items: center;
+    margin-right: 20px; /* Add some space from the right edge */
+}
+
+.social-icons-wrapper .social-bar {
+    gap: 20px; /* Adjust spacing as needed within the wrapper */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .social-icons-wrapper { /* If you are using the wrapper */
+        justify-content: center; /* Center on smaller screens */
+        margin: 10px 0;
+        margin-right: 0;
+    }
+
+    .social-bar {
+        flex-direction: row; /* Ensure horizontal on small screens */
+        justify-content: center; /* Center the icons */
+        gap: 15px;
+    }
+}
+
+/* --- Main Content --- */
+main {
+    background-color: var(--gold);
+    flex: 1; /* Grow to fill available space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--gold);
+}
+
+/* --- Form Styling --- */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: var(--black);
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+      margin-bottom: 0.5rem; /* Add margin-bottom for spacing */
+
+}
+
+/* Password Visibility Toggle */
+.password-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--gray);
+    font-size: 1.2rem;
+}
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.remember-me label {
+    margin-left: 0.5rem;
+     margin-bottom: 0;
+}
+
+button[type="submit"] {
+    background-color: var(--gold);
+    color: var(--black);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Make button full-width */
+    display: block; /* Ensure it takes full width */
+}
+
+button[type="submit"]:hover {
+    background-color: var(--dark-gold);
+}
+
+.form-message {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    text-align: center; /* Center error messages */
+}
+
+.error {
+    color: red;
+    border: 1px solid red;
+    background-color: #ffe6e6;
+}
+
+.success {
+    color: green;
+     background-color: #e6ffe6;
+    border: 1px solid green;
+}
+
+
+/* --- Footer --- */
+footer {
+    background-color: var(--black);
+    color: var(--gold);
+    padding: 2rem 0;
+    margin-top: auto;  /*Push the footer to the bottom */
+
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 2rem;
+    padding: 0 var(--spacing);
+}
+
+.footer-section h2 {
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.footer-section p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a{
+    color: var(--gold);
+    text-decoration: none;
+    display: inline-block; /*For spacing of the social-icons*/
+    margin: 5px;
+}
+
+.footer-section a:hover {
+    color: var(--dark-gold);
+}
+.footer-section.social .social-icons{
+   display: flex;
+   flex-wrap: wrap;
+}
+.footer-section.social .social-icons a{
+    font-size: 1.8rem; /*Larger icons*/
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--gray);
+    margin-top: 1rem;
+}
+
+/* --- Media Queries (Responsiveness) --- */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .nav-list {
+        flex-direction: column; /* Stack nav items vertically */
+        width: 100%; /* Take full width */
+        display: none; /* Hide by default on smaller screens */
+
+    }
+     .nav-list.active {
+        display: flex; /* Show when menu is toggled */
+    }
+
+    .nav-list li {
+        margin: 0.5rem 0; /* Adjust vertical spacing */
+        text-align: center;/*center the list items*/
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block; /* Show the menu toggle button */
+          margin-left: auto;
+    }
+    .social-bar {
+        justify-content: center;/*horizontally center the social icons*/
+        margin-top: 1rem;
+        width: 100%;
+    }
+    .footer-content {
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+    }
+}
